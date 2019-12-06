@@ -10,7 +10,6 @@ go_library(
     name = "go_default_library",
     srcs = [
         "example.go",
-        "example.peg.go",
         ":peg_go",  # keep
     ],
     importpath = "github.com/mmmknt/rules_peg/tests/example",

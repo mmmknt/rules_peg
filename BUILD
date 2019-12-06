@@ -4,3 +4,4 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 gazelle(name = "gazelle")
 
 # gazelle:exclude vendor
+# gazelle:exclude tests/example/example.peg.go
