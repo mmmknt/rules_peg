@@ -10,4 +10,4 @@ expose-generated-go:
 dep:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor
-	bazelisk run //:gazelle -- update-repos -from_file=tests/example/go.mod -to_macro=repositories.bzl%go_repositories -prune=true
+	bazelisk run //:gazelle -- update-repos -from_file=go.mod -to_macro=repositories.bzl%go_repositories -prune=true

@@ -38,3 +38,10 @@ load(
 )
 
 peg_rules_dependencies()
+
+### Below is the auto-generated dependency macro from go.mod.
+# gazelle:repository_macro repositories.bzl%go_repositories
+
+load("//:repositories.bzl", "go_repositories")
+
+go_repositories()
