@@ -10,7 +10,8 @@ go_library(
     name = "go_default_library",
     srcs = [
         "example.go",
-        ":peg_go",
+        "example.peg.go",
+        ":peg_go",  # keep
     ],
     importpath = "github.com/mmmknt/rules_peg/tests/example",
     visibility = ["//visibility:public"],
