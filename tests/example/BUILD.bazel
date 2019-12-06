@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+load("//:peg_go.bzl", "peg_go")
+
+peg_go(
+    name = "peg_go",
+    src = "example.peg",
+)
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "example.go",
+        ":peg_go",
+    ],
+    importpath = "github.com/mmmknt/rules_peg/tests/example",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_default_test",
+    size = "small",
+    srcs = ["example_test.go"],
+    embed = [":go_default_library"],
+)

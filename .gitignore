@@ -1,0 +1,15 @@
+# IDE config files
+.idea/*
+
+# bazel tmp directories
+/bazel-bin
+/bazel-genfiles
+/bazel-rules_peg
+/bazel-out
+/bazel-testlogs
+
+# Go
+/vendor
+
+# Generated go files
+*.peg.go

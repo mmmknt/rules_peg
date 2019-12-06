@@ -1,0 +1,27 @@
+package example
+
+type Opt Peg {
+    Params map[string][]string
+}
+
+Expression  <- ( KEY PATH )
+
+KEY     <- < KEY_SYNTAX > &DOMAIN                       { p.addParam("userkey", text) }
+PATH    <- DOMAIN < PATH_SYNTAX > ( QUESTION / EOF )    { p.addParam("userpath", text) }
+
+
+##########################
+#### Syntax
+##########################
+KEY_SYNTAX          <- [a-zA-Z0-9_*{}(),:;%#=\-+]+   # key can not contain Slash
+PATH_SYNTAX         <- [a-zA-Z0-9_*{}(),.:;%#=\-+/]+  # key can contain Slash
+
+
+DOMAIN              <- ('.localhost' PORT '/' )
+PORT                <- ':' [0-9]+
+
+##########################
+#### Elements
+##########################
+QUESTION            <- '?'
+EOF                 <- !.
