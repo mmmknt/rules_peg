@@ -6,8 +6,8 @@ type Opt Peg {
 
 Expression  <- ( KEY PATH )
 
-KEY     <- < KEY_SYNTAX > &DOMAIN                       { p.addParam("userkey", text) }
-PATH    <- DOMAIN < PATH_SYNTAX > ( QUESTION / EOF )    { p.addParam("userpath", text) }
+KEY     <- < KEY_SYNTAX > &DOMAIN                       { p.addParam("prefix", text) }
+PATH    <- DOMAIN < PATH_SYNTAX > ( QUESTION / EOF )    { p.addParam("path", text) }
 
 
 ##########################
